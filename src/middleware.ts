@@ -4,7 +4,7 @@ import { authConfig } from "@/lib/auth.config";
 
 const { auth: middleware } = NextAuth(authConfig);
 
-const PUBLIC_ROUTES: any[] = [];
+const PUBLIC_ROUTES: string[] = [];
 const AUTH_ROUTES = ["/auth/signup", "/auth/signin"];
 
 export default middleware((request) => {
