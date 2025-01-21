@@ -1,13 +1,13 @@
 "use client";
 
 import { FormEvent } from "react";
-import { signOut } from "next-auth/react";
+import { signIn } from "next-auth/react";
 import Button from "@/components/core/button";
 
-export default function Signout() {
+export default function OAuthForm() {
   const handleFormSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    await signOut();
+    await signIn("google");
   };
 
   return (
@@ -16,8 +16,8 @@ export default function Signout() {
       onSubmit={handleFormSubmit}
       autoComplete="off"
     >
-      <Button type="submit" width="full" size="extra-small">
-        Signout
+      <Button type="submit" width="full">
+        Signin with Google
       </Button>
     </form>
   );

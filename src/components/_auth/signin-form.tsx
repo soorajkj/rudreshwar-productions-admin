@@ -2,12 +2,10 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import { signinSchema } from "@/schemas/signin";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
-import { authClient } from "@/lib/auth-client";
 import Button from "@/components/core/button";
 import Checkbox from "@/components/core/checkbox";
 import Form from "@/components/core/form";
@@ -16,7 +14,6 @@ import Input from "@/components/core/input";
 export type SigninFormFields = z.infer<typeof signinSchema>;
 
 export default function SigninForm() {
-  const router = useRouter();
   const form = useForm<SigninFormFields>({
     resolver: zodResolver(signinSchema),
     mode: "all",
@@ -27,11 +24,7 @@ export default function SigninForm() {
     },
   });
 
-  const handleFormSubmit = async (formData: SigninFormFields) => {
-    await authClient.signIn.email(formData, {
-      onSuccess: () => router.push("/dashboard"),
-    });
-  };
+  const handleFormSubmit = async (_formData: SigninFormFields) => {};
 
   return (
     <Form.FormRoot {...form}>

@@ -1,10 +1,9 @@
 import Link from "next/link";
-import Separator from "../core/separator";
 import Container from "@/components/core/container";
 import Icon from "@/components/core/icon";
+import Separator from "@/components/core/separator";
+import Signout from "@/components/dashboard/signout";
 import ThemeChanger from "@/components/theme-changer";
-
-// import Signout from "@/components/dashboard/signout";
 
 export default function Header() {
   return (
@@ -20,7 +19,10 @@ export default function Header() {
             </Link>
           </div>
           <div className="flex flex-1 items-end justify-end">
-            <ThemeChanger />
+            <div className="flex items-center gap-4">
+              <ThemeChanger />
+              <Signout />
+            </div>
           </div>
         </div>
         <Separator />

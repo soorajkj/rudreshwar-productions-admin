@@ -1,14 +1,8 @@
-import { betterAuth } from "better-auth";
-import { prismaAdapter } from "better-auth/adapters/prisma";
-import { admin } from "better-auth/plugins";
-import { prisma } from "@/lib/prisma";
+import NextAuth from "next-auth";
+import Google from "next-auth/providers/google";
+import { authConfig } from "@/lib/auth.config";
 
-export const auth = betterAuth({
-  database: prismaAdapter(prisma, {
-    provider: "postgresql",
-  }),
-  plugins: [admin()],
-  emailAndPassword: {
-    enabled: true,
-  },
+export const { auth, signIn, signOut, handlers } = NextAuth({
+  ...authConfig,
+  providers: [Google],
 });

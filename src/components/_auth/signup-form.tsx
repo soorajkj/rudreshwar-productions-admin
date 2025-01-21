@@ -5,7 +5,6 @@ import { signupSchema } from "@/schemas/signup";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
-import { authClient } from "@/lib/auth-client";
 import Button from "@/components/core/button";
 import Form from "@/components/core/form";
 import Input from "@/components/core/input";
@@ -23,11 +22,7 @@ export default function SignupForm() {
     },
   });
 
-  const handleFormSubmit = async (formData: SignupFormFields) => {
-    await authClient.signUp.email(formData, {
-      onSuccess: () => {},
-    });
-  };
+  const handleFormSubmit = async (_formData: SignupFormFields) => {};
 
   return (
     <Form.FormRoot {...form}>
