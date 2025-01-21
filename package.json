@@ -9,6 +9,8 @@
     "prepare": "husky",
     "preinstall": "npx only-allow pnpm",
     "pre-commit": "lint-staged",
+    "type-check": "tsc --noEmit",
+    "vercel-check": "pnpm type-check && vercel build",
     "lint": "eslint --report-unused-disable-directives --max-warnings 0",
     "lint:fix": "eslint --report-unused-disable-directives --max-warnings 0 --fix",
     "format": "prettier --ignore-path .gitignore --write \"**/*.+(js|jsx|ts|tsx|css|scss|md|json)\""
