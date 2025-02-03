@@ -2,75 +2,56 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  :root {
-    --light: 223.81 0% 98%;
-    --dark: 239.95 9% 6%;
-    --bg: 0 0% 100%;
-    --fg: 240 10% 4%;
-    --overlay: 0 0% 100%;
-    --overlay-fg: 240 10% 4%;
-    --primary: 216.77 100% 50%;
-    --primary-fg: 0 0% 100%;
-    --secondary: 240 4% 96%;
-    --secondary-fg: 240.01 6% 10%;
-    --tertiary: 0 0% 100%;
-    --tertiary-fg: 240 4% 16%;
-    --accent: 216.77 100% 50%;
-    --accent-fg: 0 0% 100%;
-    --accent-subtle: 216.92 99% 97%;
-    --accent-subtle-fg: 216.74 100% 40%;
-    --success: 161.17 91% 31%;
-    --success-fg: 151.77 82% 96%;
-    --info: 205.77 100% 50%;
-    --info-fg: 0 0% 100%;
-    --muted: 240 5.88% 90%;
-    --muted-fg: 240 3.83% 46.08%;
-    --danger: 0.01 72% 51%;
-    --danger-fg: 360 86% 97%;
-    --warning: 43.2 96% 56.99999999999999%;
-    --warning-fg: 20.91 91% 14.1%;
-    --border: 240 6% 90%;
-    --input: 240 6% 90%;
-    --ring: var(--primary);
-    --toggle: 240.01 5% 84%;
-    --radius: 0.5rem;
-    --primary-chart: 216.74 100% 45%;
-    --secondary-chart: 219.83 100% 77%;
-    --tertiary-chart: 216.01 92% 60%;
-    --highlight-chart: 210 98% 78%;
-    --accent-chart: 210 98% 78%;
-  }
+:root {
+  --gray-000: #ffffff;
+  --gray-050: #f7f7f7;
+  --gray-100: #f5f5f5;
+  --gray-200: #ebebeb;
+  --gray-300: #d1d1d1;
+  --gray-400: #a3a3a3;
+  --gray-500: #7b7b7b;
+  --gray-600: #5c5c5c;
+  --gray-700: #333333;
+  --gray-800: #292929;
+  --gray-900: #1c1c1c;
+  --gray-950: #171717;
 
-  .dark {
-    --bg: 0 0% 1%;
-    --fg: 223.81 0% 98%;
-    --overlay: 240.03 6% 6%;
-    --overlay-fg: 223.81 0% 98%;
-    --primary: 216.04 98% 52%;
-    --primary-fg: 0 0% 100%;
-    --secondary: 240.06 5% 11%;
-    --secondary-fg: 223.81 0% 98%;
-    --info: 205.77 100% 50%;
-    --info-fg: 0 0% 100%;
-    --success: 161.17 91% 31%;
-    --success-fg: 151.77 82% 96%;
-    --accent: 216.04 98% 52%;
-    --accent-fg: 0 0% 100%;
-    --accent-subtle: 215.99 94% 6%;
-    --accent-subtle-fg: 204.92 100% 77%;
-    --tertiary: 240.02 10% 6%;
-    --tertiary-fg: 239.99 4% 96%;
-    --muted: 239.95 3% 16%;
-    --muted-fg: 240 5.03% 64.9%;
-    --ring: var(--primary);
-    --toggle: 239.99 5% 26%;
-    --border: 240.01 7.000000000000001% 15%;
-    --input: 239.95 3% 16%;
-    --primary-chart: 221.19 83% 53%;
-    --secondary-chart: 211.99 95% 68%;
-    --tertiary-chart: 216.01 92% 60%;
-    --highlight-chart: 210 98% 78%;
-    --accent-chart: 212 96% 87%;
-  }
+  --slate-000: #ffffff;
+  --slate-050: #f5f7fa;
+  --slate-100: #f2f5f8;
+  --slate-200: #e1e4ea;
+  --slate-300: #cacfd8;
+  --slate-400: #99a0ae;
+  --slate-500: #717784;
+  --slate-600: #525866;
+  --slate-700: #2b303b;
+  --slate-800: #222530;
+  --slate-900: #181b25;
+  --slate-950: #0e121b;
+
+  --blue-000: #ffffff;
+  --blue-050: #ebf1ff;
+  --blue-100: #d5e2ff;
+  --blue-200: #c0d5ff;
+  --blue-300: #97baff;
+  --blue-400: #6895ff;
+  --blue-500: #335cff;
+  --blue-600: #3559e9;
+  --blue-700: #2547d0;
+  --blue-800: #1f3bad;
+  --blue-900: #182f8b;
+  --blue-950: #122368;
+
+  --red-000: #ffffff;
+  --red-050: #ffebec;
+  --red-100: #ffd5d8;
+  --red-200: #ffc0c5;
+  --red-300: #ff97a0;
+  --red-400: #ff6875;
+  --red-500: #fb3748;
+  --red-600: #e93544;
+  --red-700: #d02533;
+  --red-800: #ad1f2b;
+  --red-900: #8b1822;
+  --red-950: #681219;
 }

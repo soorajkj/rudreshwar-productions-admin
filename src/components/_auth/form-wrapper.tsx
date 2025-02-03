@@ -11,7 +11,7 @@ export default function FormWrapper(props: FormWrapperProps) {
   return (
     <div className={cn("grid w-full max-w-sm gap-6", className)} {...rest}>
       {children}
-      <Separator />
+      <Separator>Or</Separator>
       <OAuthForm />
     </div>
   );

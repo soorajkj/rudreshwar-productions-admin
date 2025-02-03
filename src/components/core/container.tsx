@@ -17,5 +17,5 @@ export default function Container(props: ContainerProps) {
 }
 
 const ContainerStyles = tv({
-  base: ["container mx-auto w-full max-w-screen-xl px-4"],
+  base: ["container mx-auto w-full max-w-screen-xl px-8"],
 });

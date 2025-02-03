@@ -1,9 +1,10 @@
 import React from "react";
+import Temp from "@/components/temp";
 
 export default function Page() {
   return (
     <div>
-      <h1>Dashboard</h1>
+      <Temp />
     </div>
   );
 }

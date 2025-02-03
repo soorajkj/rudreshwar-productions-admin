@@ -1,4 +1,3 @@
-import React from "react";
 import Container from "@/components/core/container";
 import Header from "@/components/dashboard/header";
 

@@ -86,7 +86,7 @@ export default function SignupForm() {
             </Form.FormItem>
           )}
         />
-        <Button type="submit" width="full">
+        <Button type="submit" block={true}>
           Get started
         </Button>
       </form>

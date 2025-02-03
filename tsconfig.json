@@ -20,6 +20,7 @@
     ],
     "paths": {
       "@/*": ["./src/*"],
+      "@/components/core/*": ["./src/components/core/*"],
       "@/components/auth/*": ["./src/components/_auth/*"],
       "@/components/dashboard/*": ["./src/components/_dashboard/*"]
     }

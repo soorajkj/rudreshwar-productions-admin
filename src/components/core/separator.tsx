@@ -30,11 +30,13 @@ const Separator = React.forwardRef<
 
 const SeparatorStyles = tv({
   base: [
-    "pointer-events-none relative flex flex-1 shrink-0 items-center bg-neutral-200 dark:bg-neutral-800",
+    "pointer-events-none relative flex flex-1 shrink-0 items-center gap-2 text-xs font-medium text-gray-600",
   ],
   variants: {
     orientation: {
-      horizontal: ["h-px w-full"],
+      horizontal: [
+        "before:h-px before:w-full before:flex-1 before:bg-gray-200 after:h-px after:w-full after:flex-1 after:bg-gray-200",
+      ],
       vertical: ["h-full w-px"],
     },
   },

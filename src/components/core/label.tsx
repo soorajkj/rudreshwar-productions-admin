@@ -29,13 +29,6 @@ export default Label;
 
 const LabelStyles = tv({
   base: [
-    "inline-block",
-    "text-sm",
-    "leading-none",
-    "dark:text-surface-900",
-    "leading-none",
-    "text-foreground-light",
-    "peer-disabled:cursor-not-allowed",
-    "peer-disabled:opacity-70",
+    "inline-block text-sm font-medium leading-none text-gray-700 peer-disabled:cursor-not-allowed",
   ],
 });

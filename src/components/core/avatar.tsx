@@ -13,14 +13,17 @@ const AvatarRoot = React.forwardRef<
   React.ComponentRef<typeof AvatarPrimitive.Root>,
   AvatarRootProps
 >((props, ref) => {
-  const { size = "md", className, ...rest } = props;
+  const { children, className, ...rest } = props;
 
   return (
     <AvatarPrimitive.Root
       ref={ref}
-      className={cn(AvatarRootStyles({ size, className }))}
+      className={cn(AvatarRootStyles({ className }))}
       {...rest}
-    />
+    >
+      {children}
+      <span className="absolute left-7 top-0 size-3 rounded-full border-2 border-white bg-green-500"></span>
+    </AvatarPrimitive.Root>
   );
 });
 
@@ -59,46 +62,18 @@ const AvatarImage = React.forwardRef<
 
 const AvatarRootStyles = tv({
   base: [
-    "relative",
-    "inline-flex",
-    "aspect-square",
-    "shrink-0",
-    "items-center",
-    "justify-center",
-    "overflow-hidden",
-    "rounded-full",
+    "relative inline-flex aspect-square size-10 shrink-0 items-center justify-center rounded-full border-gray-300 bg-gray-100",
   ],
-  variants: {
-    size: {
-      xxs: ["h-4", "min-w-4", "text-xxs"],
-      xs: ["h-6", "min-w-6", "text-xs"],
-      sm: ["h-8", "min-w-8", "text-sm"],
-      md: ["h-10", "min-w-10", "text-base"],
-      lg: ["h-12", "min-w-12", "text-lg"],
-      xl: ["h-14", "min-w-14", "text-xl"],
-      xxl: ["h-16", "min-w-16", "text-2xl"],
-    },
-  },
 });
 
 const AvatarFallbackStyles = tv({
   base: [
-    "flex",
-    "h-full",
-    "w-full",
-    "items-center",
-    "justify-center",
-    "border",
-    "border-silver-200",
-    "dark:border-graphite-700",
-    "text-graphite-900",
-    "dark:text-silver-200",
-    "rounded-full",
+    "bg-gray-50 flex h-full w-full items-center justify-center rounded-full font-semibold text-gray-500",
   ],
 });
 
 const AvatarImageStyles = tv({
-  base: ["static", "block", "aspect-square", "h-full", "w-full"],
+  base: ["static block aspect-square h-full w-full overflow-clip rounded-full"],
 });
 
 AvatarRoot.displayName = AvatarPrimitive.Root.displayName;

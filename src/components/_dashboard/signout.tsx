@@ -16,7 +16,7 @@ export default function Signout() {
       onSubmit={handleFormSubmit}
       autoComplete="off"
     >
-      <Button type="submit" width="full" size="extra-small">
+      <Button type="submit" size="sm">
         Signout
       </Button>
     </form>

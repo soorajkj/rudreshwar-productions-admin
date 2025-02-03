@@ -19,21 +19,23 @@ export default function ThemeChanger() {
   if (!mounted) return null;
 
   return (
-    <ToggleGroup.ToggleGroupRoot
-      type="single"
-      value={theme}
-      onValueChange={(value) => setTheme(value)}
-      className="gap-0 divide-x divide-neutral-800 rounded-md border border-neutral-800"
-    >
-      {themes.map((theme, i) => (
-        <ToggleGroup.ToggleGroupItem
-          key={i}
-          value={theme}
-          className="inline-flex size-7 items-center justify-center"
-        >
-          <Icon icon={Icons[theme]} className="size-4" />
-        </ToggleGroup.ToggleGroupItem>
-      ))}
-    </ToggleGroup.ToggleGroupRoot>
+    <div className="fixed bottom-6 right-6">
+      <ToggleGroup.ToggleGroupRoot
+        type="single"
+        value={theme}
+        onValueChange={(value) => setTheme(value)}
+        className="divide-neutral-800 border-neutral-800 gap-0 divide-x rounded-md border"
+      >
+        {themes.map((theme, i) => (
+          <ToggleGroup.ToggleGroupItem
+            key={i}
+            value={theme}
+            className="inline-flex size-7 items-center justify-center"
+          >
+            <Icon icon={Icons[theme]} className="size-4" />
+          </ToggleGroup.ToggleGroupItem>
+        ))}
+      </ToggleGroup.ToggleGroupRoot>
+    </div>
   );
 }

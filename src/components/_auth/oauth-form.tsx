@@ -11,13 +11,9 @@ export default function OAuthForm() {
   };
 
   return (
-    <form
-      className="flex flex-col gap-4"
-      onSubmit={handleFormSubmit}
-      autoComplete="off"
-    >
-      <Button type="submit" width="full">
-        Signin with Google
+    <form className="flex flex-col gap-4" onSubmit={handleFormSubmit}>
+      <Button type="submit" variant="outline" block={true}>
+        Sign in with Google
       </Button>
     </form>
   );

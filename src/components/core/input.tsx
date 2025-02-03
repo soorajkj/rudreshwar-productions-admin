@@ -2,8 +2,9 @@
 
 import * as React from "react";
 import { tv, VariantProps } from "tailwind-variants";
+import { cn } from "@/utils/classes";
 
-export interface InputProps
+interface InputProps
   extends React.InputHTMLAttributes<HTMLInputElement>,
     VariantProps<typeof InputStyles> {}
 
@@ -15,16 +16,16 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
       <input
         ref={ref}
         type={type}
-        className={InputStyles({ className })}
+        className={cn(InputStyles({ className }))}
         {...rest}
-      ></input>
+      />
     );
   }
 );
 
 const InputStyles = tv({
   base: [
-    "peer flex h-11 w-full grow rounded-lg border border-neutral-200 bg-white px-3 py-2 text-sm leading-6 text-neutral-700 placeholder-neutral-400/70 transition-colors duration-100 focus:border-blue-400 focus:outline-none focus:outline focus:outline-2 focus:-outline-offset-1 focus:ring focus:ring-blue-300 focus:ring-opacity-40 aria-invalid:border-red-500 dark:border-neutral-600 dark:bg-neutral-900 dark:text-neutral-300 dark:placeholder-neutral-500 dark:focus:border-blue-300 dark:aria-invalid:border-red-600",
+    "h-10 w-full overflow-hidden rounded-lg border border-gray-300 bg-transparent px-3 py-1 text-base file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-gray-300 focus-visible:border-violet-300 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-violet-500/20 disabled:cursor-not-allowed disabled:bg-gray-050 disabled:placeholder:text-gray-500 aria-invalid:border-red-300 aria-invalid:focus-visible:ring-red-500/20",
   ],
 });
 

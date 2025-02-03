@@ -5,6 +5,7 @@ import { LayoutProps } from "@/types/layout";
 import SessionIndicator from "@/components/session-indicator";
 import ThemeProvider from "@/components/theme-provider";
 import "@/app/globals.css";
+import ThemeChanger from "@/components/theme-changer";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -14,10 +15,11 @@ export const metadata: Metadata = {
 export default function Layout({ children }: LayoutProps) {
   return (
     <html lang="en" suppressHydrationWarning={true}>
-      <body className="h-full min-h-screen w-full overflow-x-hidden font-family-sans text-base font-normal not-italic leading-normal antialiased">
+      <body className="bg-gray-000 h-full min-h-screen w-full overflow-x-hidden font-family-sans text-base font-normal not-italic leading-normal text-gray-950 antialiased dark:bg-gray-950 dark:text-gray-025">
         <ThemeProvider enableSystem defaultTheme="system" attribute="class">
           <SessionProvider>
             {children}
+            <ThemeChanger />
             <SessionIndicator />
           </SessionProvider>
         </ThemeProvider>

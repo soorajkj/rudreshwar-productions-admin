@@ -11,18 +11,16 @@ interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
     Omit<VariantProps<typeof ButtonStyles>, "disabled"> {
   asChild?: boolean;
-  width?: "auto" | "full";
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   (props, ref) => {
     const {
       asChild,
-      intent,
-      size,
-      shape,
-      width,
-      disabled,
+      variant = "default",
+      size = "md",
+      iconOnly = false,
+      block = false,
       className,
       ...rest
     } = props;
@@ -33,11 +31,10 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         ref={ref}
         className={cn(
           ButtonStyles({
-            intent,
+            variant,
             size,
-            shape,
-            width,
-            disabled,
+            block,
+            iconOnly,
             className,
           })
         )}
@@ -53,52 +50,28 @@ export default Button;
 
 const ButtonStyles = tv({
   base: [
-    "relative isolate box-border inline-flex items-center justify-center gap-x-2 border border-transparent font-medium no-underline transition-colors duration-300 before:absolute after:absolute",
+    "inline-flex grow items-center justify-center gap-2 whitespace-nowrap rounded-lg border border-transparent text-sm font-medium transition-colors",
   ],
   variants: {
-    intent: {
-      primary: [
-        "transform rounded-lg bg-blue-600 text-white hover:bg-blue-500 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-80",
-      ],
-      secondary: [
-        "bg-neutral-100 text-neutral-700 hover:bg-neutral-100 dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-300 dark:hover:bg-neutral-800",
-      ],
-      warning: [],
-      danger: [],
+    variant: {
+      default: ["bg-violet-600 text-white hover:bg-violet-700"],
+      destructive: ["bg-red-600 text-white hover:bg-red-700"],
+      outline: ["border-gray-300 bg-white text-gray-700 hover:bg-gray-050"],
+      secondary: ["bg-gray-950 text-white hover:bg-gray-900"],
+      ghost: ["text-gray-600 hover:bg-gray-050 hover:text-gray-700"],
+      link: ["text-gray-600 underline-offset-4 hover:underline"],
     },
     size: {
-      "extra-small":
-        "h-8 px-[calc(theme(spacing.3)-1px)] py-[calc(theme(spacing.1)-1px)] text-xs/4 lg:text-[0.800rem]/4",
-      small:
-        "h-9 px-[calc(theme(spacing.4)-1px)] py-[calc(theme(spacing[1.5])-1px)] text-sm/5 lg:text-sm/5",
-      medium:
-        "h-10 px-[calc(theme(spacing.4)-1px)] py-[calc(theme(spacing.2)-1px)] text-base lg:text-sm/6",
-      large:
-        "h-10 px-[calc(theme(spacing.4)-1px)] py-[calc(theme(spacing[2.5])-1px)] text-base sm:h-11 sm:px-[calc(theme(spacing.5)-1px)] lg:text-base/7 [&>[data-slot=icon]]:mx-[-3px] sm:[&>[data-slot=icon]]:size-5",
-      "square-petite": "size-9 shrink-0 [&_[data-slot=icon]]:text-current",
+      sm: ["h-9"],
+      md: ["h-10"],
+      lg: ["h-11"],
+      xl: ["h-12"],
     },
-    shape: {
-      square:
-        "rounded-lg before:rounded-[calc(theme(borderRadius.lg)-1px)] after:rounded-[calc(theme(borderRadius.lg)-1px)] dark:after:rounded-lg",
-      circle:
-        "rounded-[9999px] before:rounded-[9998px] after:rounded-[9998px] dark:after:rounded-[9999px]",
+    block: {
+      true: ["w-full"],
     },
-    disabled: {
-      false: "forced-colors:disabled:text-[GrayText]",
-      true: "cursor-default opacity-60 forced-colors:disabled:text-[GrayText]",
+    iconOnly: {
+      true: ["aspect-square"],
     },
-    isPending: {
-      true: "cursor-default",
-    },
-    width: {
-      auto: "w-auto",
-      full: "w-full",
-    },
-  },
-  defaultVariants: {
-    intent: "primary",
-    size: "medium",
-    shape: "square",
-    width: "auto",
   },
 });

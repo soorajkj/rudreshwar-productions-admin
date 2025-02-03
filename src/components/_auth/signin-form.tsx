@@ -60,7 +60,7 @@ export default function SigninForm() {
               <Form.FormControl>
                 <Input
                   type="password"
-                  placeholder="●●●●●●●●"
+                  placeholder="********"
                   autoComplete="off"
                   {...field}
                 />
@@ -80,6 +80,7 @@ export default function SigninForm() {
                   <Checkbox
                     checked={field.value}
                     onCheckedChange={field.onChange}
+                    size="sm"
                   />
                 </Form.FormControl>
                 <Form.FormMessage />
@@ -90,7 +91,7 @@ export default function SigninForm() {
             Forgot password
           </Link>
         </div>
-        <Button type="submit" width="full">
+        <Button type="submit" block={true}>
           Sign in
         </Button>
       </form>
